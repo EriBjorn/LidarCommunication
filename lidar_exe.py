@@ -93,7 +93,7 @@ signal.signal(signal.SIGTERM, quit)
 if os.path.isdir("pointCloud"):
     shutil.rmtree("pointCloud")
 directory = "pointCloud"
-parent_dir = "\Users\ebjor\OneDrive - NTNU\ArvidGjerde_Lidar\lidar_prg"
+parent_dir = "C:\Users\ebjor\Documents\Python Scripts\Lidar\LidarCommunication"
 path = os.path.join(parent_dir, directory)
 
 os.makedirs(path)

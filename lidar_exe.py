@@ -84,12 +84,11 @@ signal.signal(signal.SIGTERM, quit)
 #data = open3d.io.write_point_cloud("pointcloud.ply", print_progress=True)
 
 
-
 #
 #
 #
 
-# Makes a directory for saving the files
+# Makes a directory for saving the files (edit path to avoid error)
 
 filename = input("Name of file: ")
 
@@ -97,12 +96,11 @@ filename = input("Name of file: ")
 if os.path.isdir(filename):
     shutil.rmtree(filename)
 directory = filename
-parent_dir = "\Users\ebjor\OneDrive - NTNU\Lidar\lidar_prg"
+parent_dir = "C:\Users\ebjor\Documents\Python Scripts\Lidar\LidarCommunication"
 path = os.path.join(parent_dir, directory)
 
 os.makedirs(path)
 print("Directory '% s' created" % directory)
-
 
 
 def main():

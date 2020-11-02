@@ -90,7 +90,7 @@ signal.signal(signal.SIGTERM, quit)
 
 # Makes a directory for saving the files (edit path to avoid error)
 
-filename = input("Name of file: ")
+filename = raw_input("Name of file: ")
 
 
 if os.path.isdir(filename):
@@ -104,7 +104,7 @@ print("Directory '% s' created" % directory)
 
 
 def main():
-    fps = input("Set FPS : ")
+    fps = raw_input("Set FPS : ")
     com.connection()                      # Establish the TCP socket connection
     _sendmsg(sock, "setFps " + str(fps))            # Edit the number after "setFps" to set the fps(hz)
     _sendmsg(sock, com.cmdStart)
@@ -112,9 +112,10 @@ def main():
     #_sendmsg(sock, com.nearestPointOn)
 
     frame_n = 0
+    n = 50
     while True:
         try:
-            for i in range(50):
+            for i in range(n):
 
                 data = open("pointCloud/pcl%s.txt" % i, 'w')
 
@@ -141,10 +142,8 @@ def main():
                 # data.write("Nearest Point " + "\n")
                 # np.savetxt(data, nearPt, fmt='%d', newline='\n', delimiter=' ')
 
-                frame_n += 1
-
-                if frame_n >= 50:
-                    _sendmsg(sock, com.cmdStop)
+                frame_n +=
+            _sendmsg(sock, com.cmdStop)
 
         except Exception:
             break
